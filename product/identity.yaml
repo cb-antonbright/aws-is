@@ -810,9 +810,11 @@ Resources:
       Certificates:
         - CertificateArn: !Join
           - ''
-          - - 'arn:aws:iam::'
+          - - 'arn:aws:acm:'
+            - !Ref 'AWS::Region'
+            - ':'
             - !Ref 'AWS::AccountId'
-            - ':server-certificate'
+            - ':certificate'
             - /
             - !Ref CertificateName
       LoadBalancerArn: !Ref WSO2ISLoadBalancer
